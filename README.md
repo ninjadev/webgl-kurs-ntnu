@@ -1,4 +1,4 @@
 webgl-kurs-ntnu
 ===============
 
-25. september skal vi ha et webgl-kurs, vi burde ha noe folk kan jobbe med her
+We need some code people can work with for our course september 25th
