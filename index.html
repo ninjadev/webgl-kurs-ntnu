@@ -146,15 +146,46 @@ WebGL er en utvidelse av dette, og har dermed Z-aksen som dybde.
 
 ---
 
-# THREE.js
+# Hvorfor THREE.js
 
-<div id=three-1></div>
+### 3D blir enklere
+
+Bygd opp av:
+
+- Kamera
+- Scene
+- 3D-objekter (mesh)
 
 ???
 
-Forklare litt om threejs.
-Vise fram litt webgl boilerplate, vise fram ekvivalent threejs.
-'Nuff said.
+THREE.js er et javascript-rammeverk som gjør det enkelt å jobbe med 3D i nettleseren.
+
+---
+
+<br>
+
+```javascript
+var renderer = new THREE.WebGLRenderer();
+
+var scene = new THREE.Scene();
+
+var camera = new THREE.PerspectiveCamera(
+    view_angle,
+    aspect,
+    near,
+    far
+);
+
+camera.position.z = 300;
+
+renderer.setSize(width, height);
+
+document.body.appendChild(renderer.domElement);
+
+renderer.render(scene, camera);
+```
+
+???
 
 ---
 

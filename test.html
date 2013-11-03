@@ -1,0 +1,27 @@
+<!doctype html>
+<script src=http://threejs.org/build/three.min.js></script>
+<script>
+
+function bootstrap(){
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+    camera.position.z = 500;
+
+    var scene = new THREE.Scene();
+
+    var geometry = new THREE.CubeGeometry(200, 200, 200);
+
+    var material = new THREE.MeshBasicMaterial({color: 0xff0000});
+
+    var mesh = new THREE.Mesh(geometry, material);
+
+    scene.add(mesh);
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    document.body.appendChild(renderer.domElement);
+
+    renderer.render(scene, camera);
+}
+</script>
+<body onload=bootstrap()>
