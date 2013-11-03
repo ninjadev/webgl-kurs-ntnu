@@ -1,5 +1,12 @@
+@font-face {
+    font-family: norwester;
+    src: url(norwester.woff);
+    font-weight:400;
+}
+
 body {
-    font-family: georgia, serif;
+    font-family: norwester, georgia, serif;
+    font-size: 40px;
 }
 
 /*
@@ -19,4 +26,12 @@ body {
     color: white;
     box-shadow: 0 0 30px #000;
     -webkit-box-shadow: 0 0 30px #000;
+}
+
+.subtle {
+    opacity: 0.25;
+}
+
+.center {
+    text-align: center;
 }
