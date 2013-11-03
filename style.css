@@ -9,6 +9,10 @@ body {
     font-size: 40px;
 }
 
+code {
+    font-size: 20px;
+}
+
 /*
  * Colors:
  * #D3E6F7;
