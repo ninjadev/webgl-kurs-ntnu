@@ -32,6 +32,11 @@ code {
     -webkit-box-shadow: 0 0 30px #000;
 }
 
+.remark-notes {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+}
+
 .subtle {
     opacity: 0.25;
 }
