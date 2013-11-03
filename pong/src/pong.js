@@ -12,18 +12,16 @@ function main() {
   var near = 0.1;
   var far = 10000;
 
-  /* Create a THREEJS WebGL renderer. This <blah blah> TODO: document better */
+  /* Create a THREEJS WebGL renderer. */
   var renderer = new THREE.WebGLRenderer();
 
-  /* Create a THREEJS renderer. This <blah blah> TODO: document better */
+  /* Create a camera. This is the most useful camera type, acting like a real camera. */
   var camera = new THREE.PerspectiveCamera(view_angle, aspect, near, far);
 
-  /* Create a THREEJS renderer. This <blah blah> TODO: document better */
+  /* Create a scene.
+   * All lights and objects have to be placed here. 
+   * Use scene.add(object); */
   var scene = new THREE.Scene();
-
-  /* Add the camera to scene. All THREE objects need to be added to a scene
-   * to become visible for the renderer */
-  scene.add(camera);
 
   /* Pull the camera back a little bit. Newly initialized cameras start at
    * (x: 0, y: 0, z: 0), so we need to pull the camera back so we can see
@@ -35,7 +33,7 @@ function main() {
 
   /* Attach the WebGL renderer to the html, so that it becomes visible in the
    * browser window */
-  document.querySelector('body').appendChild(renderer.domElement);
+  document.body.appendChild(renderer.domElement);
 
   /* Kickstart the game loop */
   window.requestAnimationFrame(loop);
