@@ -335,6 +335,27 @@ function animate() {
 ```
 
 ---
+class: center, middle
+
+# Date.now()
+
+Millisekunder siden 1. januar 1970
+
+---
+class: middle
+
+```javascript
+function animate() {
+    requestAnimationFrame(animate);
+
+    mesh.rotation.x = Date.now() * 0.0005;
+    mesh.rotation.z = Date.now() * 0.0005;
+
+    renderer.render(scene, camera);
+}
+```
+
+---
 
 # Merket dere dette?
 
