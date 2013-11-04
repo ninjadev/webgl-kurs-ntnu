@@ -7,8 +7,7 @@
       /* Slideshow styles */
     </style>
     <script src=remark-0.5.7.min.js></script>
-    <script src=three.min.js></script>
-    <script src=script.js></script>
+    <script src=//cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js></script>
     <link rel=stylesheet type=text/css href=res/css/style.css />
     <style>
         canvas {
@@ -80,6 +79,15 @@ var someObject = {};
 Slik ser det ut når man lager en variabel.
 arrays
 objects
+
+---
+
+<br><br><br>
+```javascript
+var someNumber = 0;
+
+someNumber += 1; /* someNumber is now 1 */
+```
 
 ---
 
@@ -260,6 +268,50 @@ Hvis de har bygd riktig kan de forsette på dems egen kode, ellers kan de bruke 
 
 ---
 
+# Oppgave 1
+
+## Lage en roterende kube
+
+### http://poetene.net/cube/
+
+---
+
+# Oppgave 1
+
+```javascript
+mesh = new THREE.Mesh(geometry, material);
+```
+
+mesh.rotation har tre properties: x, y og z
+
+```javascript
+mesh.rotation.x = 1;
+```
+
+---
+demo: rotate-cube
+
+# Oppgave 1
+
+<div id=rotate-cube class=demo></div>
+
+---
+
+# LF oppgave 1
+
+```javascript
+function animate() {
+    requestAnimationFrame(animate);
+
+    mesh.rotation.x += 0.005;
+    mesh.rotation.y += 0.005;
+
+    renderer.render(scene, camera);
+}
+```
+
+---
+
 # Merket dere dette?
 
 Vi har ikke brukt æ, ø eller å
@@ -272,5 +324,6 @@ Nå, la oss kode! Hilsen Poëtene
     <script type="text/javascript">
       var slideshow = remark.create();
     </script>
+    <script src=script.js></script>
   </body>
 </html>
