@@ -1,0 +1,10 @@
+Animer mange kuber i et kult mønster. Du kan f.eks få de til å bevege seg i en sirkelbane eller et åttetall.
+
+Et "cube"-objekt (egentlig en mesh) har mange interessante egenskaper du kan sette hver gang animation kalles. Eksempel:
+cube.position.x = -50;
+cube.scale.y = 1.4;
+cube.rotation.z = 6;
+
+Får å få de til å animere, kan du bruke "t"-variabelen, som er et stort tall som stadig blir større.
+Du kan få til ganske kule begevelser hvis du bruker f.eks funksjonene Math.sin eller Math.cos med et parameter som er en funksjon av t og i
+F.eks Math.sin(0.001 * t) vil sakte men sikkert animere mellom -1 og 1
