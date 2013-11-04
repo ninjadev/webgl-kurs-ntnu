@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style>
+			body {
+				background-color: #ffffff;
+				margin: 0;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r57/three.min.js"></script>
+		<script>
+
+			var camera, scene, renderer;
+			var geometry, material, mesh;
+
+			var init = function () {
+				CUBE_HEIGHT = 300;
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+				// Set camera above cube
+				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1000 );
+				camera.position.z = CUBE_HEIGHT * 2;
+
+				scene = new THREE.Scene();
+				
+				// Create cube
+				cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x1abc9c } );
+				cubeMaterialOutline = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true, wireframeLinewidth: 4 });
+				cubeGeometry = new THREE.CubeGeometry( 200, 200, 200 );
+				cubeMesh = new THREE.Mesh( cubeGeometry, new THREE.MeshFaceMaterial([cubeMaterial, cubeMaterial, cubeMaterialOutline, cubeMaterialOutline, cubeMaterial, cubeMaterial]) );
+				cubeMesh.position.z = CUBE_HEIGHT;
+				
+				scene.add( cubeMesh );
+				
+				// Create plane
+				planeGeometry = new THREE.PlaneGeometry( 500, 500 );
+				checkerboardTexture = new THREE.MeshBasicMaterial( { color: 0xe74c3c, side: THREE.DoubleSide });
+				planeMesh = new THREE.Mesh( planeGeometry, checkerboardTexture );
+				planeMesh.overdraw = true;
+				
+				scene.add( planeMesh );
+
+			}
+
+			var animate = function () {
+
+				requestAnimationFrame( animate );
+				
+				var t = Date.now();
+				
+				// Rotate cube slightly
+				cubeMesh.rotation.x = -2 * Math.sin( t / 1800);
+				cubeMesh.rotation.y = -2 * Math.cos( t / 1400);
+				cubeMesh.rotation.z = -2 * Math.cos( t / 1400);
+				
+				// **************************************** //
+				// Begin your camera movement / rotate code //
+				// **************************************** //
+
+				camera.position.x = CUBE_HEIGHT * Math.sin(t / 1000);
+				camera.position.y = CUBE_HEIGHT * Math.cos(t / 1000);
+				
+				// Point the camera towards the cube
+				camera.lookAt(cubeMesh.position);
+ 
+				renderer.render( scene, camera );
+
+			}
+
+			init();
+			animate();
+
+		</script>
+	</body>
+</html>
