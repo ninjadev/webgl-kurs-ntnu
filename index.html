@@ -252,6 +252,26 @@ scene.add(sphere);
 
 ---
 
+# Animasjon
+
+Animasjon krever at en funksjon kalles med jevne mellomrom
+
+```javascript
+function animate() {
+    requestAnimationFrame(animate);
+
+    // do animation here
+}
+```
+
+???
+
+Nettleseren bestemmer hvor ofte funksjonen kalles
+
+Når nettsiden er i bakgrunnen, kalles den sjeldnere
+
+---
+
 # Dette kurset
 Korte oppgaver som viser grunnleggende THREE.js-konsepter.
 
@@ -297,6 +317,8 @@ demo: rotate-cube
 
 <div id=rotate-cube class=demo></div>
 
+???
+Noe à la dette
 ---
 
 # LF oppgave 1
