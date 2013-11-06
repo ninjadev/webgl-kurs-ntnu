@@ -14,7 +14,7 @@ slideshow.on('hideSlide', function(slide) {
 });
 
 function rotateCube() {
-  var renderer = new THREE.WebGLRenderer();
+  var renderer = new THREE.WebGLRenderer({ antialias : true });
   var container = document.querySelector('#rotate-cube');
   console.log(container.offsetWidth);
   renderer.setSize(container.offsetWidth, container.offsetHeight);
