@@ -70,9 +70,11 @@ class: center
 ```javascript
 var someString = "this is a string";
 
-var someEmptyArray = [];
+var someArray = ['foo', 'bar'];
+someArray[0]; /* foo */
 
-var someObject = {};
+var someObject = {x: 5, y: 9};
+someObject.x; /* 5 */
 ```
 
 ???
@@ -343,6 +345,51 @@ function animate() {
 }
 ```
 
+---
+
+# Oppgave 3
+
+## Animer mange kuber
+
+Animer mange kuber i en kul bane. Du kan f.eks bevege de i en sirkelbane eller ∞
+
+---
+
+# Oppgave 3
+
+Du kan enkelt sette position og scale:
+```javascript
+cube.position.x = ...
+cube.scale.y = ...
+```
+
+```javascript
+Math.sin(0.001 * t)
+// Vil sakte men sikkert animere mellom -1 og 1
+```
+
+---
+
+# Oppgave 3
+
+## Animer mange kuber
+
+```javascript
+for (var i = 0; i < cubes.length; i++) {
+	var cube = cubes[i];
+	//manipulate every cube here
+	cube.position.x = 200 * Math.sin(0.001 * t + 0.5 * i)
+}
+```
+Hvis du bruker i-variabelen, kan du animere hver kube forskjellig
+
+---
+
+# Oppgave 3
+
+## Animer mange kuber
+
+### http://poetene.net/effect/12
 ---
 
 # Merket dere dette?
