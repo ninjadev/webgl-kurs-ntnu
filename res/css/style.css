@@ -61,3 +61,8 @@ a {
 .float-right {
     float: right;
 }
+
+.tiny-font code {
+    font-size: 2px !important;
+    color: black !important;
+}
