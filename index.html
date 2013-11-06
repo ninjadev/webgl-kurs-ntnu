@@ -192,14 +192,16 @@ var renderer = new THREE.WebGLRenderer();
 
 var scene = new THREE.Scene();
 
+var view_angle = 45;
+var aspect = width / height;
+var near = 0.1;
+var far = 10000;
 var camera = new THREE.PerspectiveCamera(
     view_angle,
     aspect,
     near,
     far
 );
-
-camera.position.z = 300;
 
 renderer.setSize(width, height);
 
@@ -209,6 +211,11 @@ renderer.render(scene, camera);
 ```
 
 ???
+
+Minimalt eksempel.
+Dette er den minste versjonen av boilerplaten du trenger.
+
+Forklar hver linje godt - denne sliden introduserer mange konsepter.
 
 ---
 
